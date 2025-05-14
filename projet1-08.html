@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet 1-08</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+    <div id="app">
+      <p v-text="texteBrut"></p> <!--permet d'inserer du texte-->
+      <p v-html="texteHTML"></p><!--permet d'inserer du html-->
+    </div>
+    <script>
+        app = Vue.createApp({
+            data() {
+                return {
+                    texteBrut: "Un simple texte",
+                    texteHTML: "<font color='red'><u>Un texte rouge souligné</u></font>",
+                }
+            },
+            
+        })
+        app.mount('#app');
+    </script>
+</body>
+
+</html>

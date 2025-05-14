@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet 1-09</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+    <div id="app">
+      
+      <p >
+        <p >Nom: <span v-text="person.nom"></span> </p><br>
+        <p >Prénom: <span v-text="person.prenom"></span> </p><br>
+        <p >Âge: <span v-text="person.age"></span> </p><br>
+      </p>
+    </div>
+    <script>
+        app = Vue.createApp({
+            data() {
+                return {
+                  person:{
+                    nom: "John",
+                    prenom: "Doe",
+                    age: 30,
+                    }
+                }
+            },
+            
+        })
+       const vm =  app.mount('#app');
+        vm.person.prenom = "Jane"; // Modification de la propriété prenom après 3 secondes
+    
+    </script>
+</body>
+
+</html>

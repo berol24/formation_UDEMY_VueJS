@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet 1-20</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+    <div id="app">
+      <form action="">
+        <label> Entrez votre prenom</label>
+        <input type="text" v-model="prenom">
+        <button @click="bonjour"> Bonjour</button>
+        <button @click="hello"> hello</button>
+        <button @click="salutation('Bonjour')">Dis Bonjour</button>
+        <button @click="salutation('Hello')">Dis hello</button>
+      </form>
+    </div>
+    <script>
+        app = Vue.createApp({
+            data() {
+                return {
+                    prenom: ""
+                }
+            },
+              methods:{
+                    bonjour() {
+                       alert("Bonjour " + this.prenom);
+                    },
+                    hello() {
+                       alert("Hello " + this.prenom);
+                    },
+                    salutation(texte) {
+                       alert(texte + " " + this.prenom);
+                    }
+                
+            }  
+        })
+        app.mount('#app');
+    </script>
+</body>
+
+</html>

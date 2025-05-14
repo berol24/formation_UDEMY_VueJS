@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Squelette</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        {{ calcul}}
+    </div>
+    <script>
+        app = Vue.createApp({
+            data() {
+                return {
+                    d: 15,
+                }
+            },
+            computed: {
+                calcul() {
+                    return this.d // ici this.d est une propriété de l'objet data
+                }
+            }
+        })
+        app.mount('#app');
+    </script>
+</body>
+
+</html>

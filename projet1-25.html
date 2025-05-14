@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet 1-25</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>                                                                                  
+    <div id="app">
+      <img @click="action" src="https://www.fcbarcelona.com/fcbarcelona/photo/2020/03/09/6cfb910a-1edd-4a1b-b854-498d32bc97d1/eto-o-fcb-at.madrid-8-.jpg"
+       alt="image etoo" v-bind:width= "valeur" height="200px"
+       @click.left="largeur(200)" @click.right="largeur(100)" @click.middle="largeur(300)"
+       >
+      
+    </div>
+    <script>
+        app = Vue.createApp({
+             data() {
+                return {
+                    valeur: "300px",
+                }
+            },
+            methods: {
+                largeur(lar) {
+                    this.valeur = lar + "px";
+                    
+                },
+                
+            }              
+        })
+        app.mount('#app');
+    </script>
+</body>
+
+</html>

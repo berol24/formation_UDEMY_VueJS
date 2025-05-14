@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet 1-36</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+    <div id="app">
+    <label for="">Couleur</label>
+    <select name="" id="" v-model="couleur" >
+        <option value="black">noir</option>
+        <option value="blue">Bleu</option>
+        <option value="green">Vert</option>
+        <option value="yellow">Jaune</option>
+    </select>
+    <label for="">Taille</label>
+    <select name="" id="" v-model="taille">
+        <option  value="16px">16px</option>
+        <option value="25px">25px</option>
+        <option value="40px">40px</option>
+        <option value="60px">60px</option>
+    </select>
+        <div :style="{fontSize: taille, color: couleur}" >
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam consequuntur tenetur optio perferendis alias nesciunt distinctio? Iure, vel ut harum, repellat officiis, aliquid voluptatibus et excepturi iste est praesentium suscipit!
+        </div>
+    </div>
+    <script>
+        app = Vue.createApp({
+            data() {
+                return {
+                    taille: "16px",
+                    couleur: "black"
+                }
+            }
+         
+        })
+        app.mount('#app');
+    </script>
+</body>
+
+</html>

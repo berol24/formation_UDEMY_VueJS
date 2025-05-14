@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet 1-28</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+    <div id="app">
+       <div v-for="(el,index) in elements">
+        {{index}}-{{ el }} <button @click="supprimer(index)">supprimer</button>
+      </div>
+    </div>
+    <script>
+        app = Vue.createApp({
+            data() {
+                return {
+                    elements: ["premier", "deuxième", "troisième", "quatrième"]
+                }
+            }
+            ,
+            methods: {
+                supprimer(index) {
+                    console.log(index);
+                        this.elements.splice(index,1); //supprimer l'élément à l'index index
+                        
+                }
+            }
+        })
+        app.mount('#app');
+        
+    </script>
+</body>
+
+</html>

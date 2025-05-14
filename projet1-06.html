@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet 1-06</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!--<div v-bind:[attribute]="[Vue data]"></div>
+        on peut utiliser sans le v-bind
+        <div :[attribute]="[Vue data]"></div>
+        -->  
+        <img v-bind:src="url" alt="logo vuejs" />
+    </div>
+    <script>
+        app = Vue.createApp({
+            data() {
+                return {
+                    url: 'https://vuejs.org/images/logo.png',
+                }
+            }
+        })
+        app.mount('#app');
+    </script>
+</body>
+
+</html>

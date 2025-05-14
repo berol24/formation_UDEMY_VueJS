@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet 1-29</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+    <div id="app">
+
+        <input type="radio" v-model="choix" value="click" checked><label for="">simple click</label>
+        <input type="radio" v-model="choix" value="dblclick"><label for="">double click</label>
+        <p>
+             <img :width="taille" @[choix]="modifierTaille"
+                src="https://www.fcbarcelona.com/fcbarcelona/photo/2020/03/09/6cfb910a-1edd-4a1b-b854-498d32bc97d1/eto-o-fcb-at.madrid-8-.jpg">
+        </p>
+    </div>
+    <script>
+        app = Vue.createApp({
+            data() {
+                return {
+                    taille: 200,
+                    choix: "click"
+                }
+            },
+            methods: {
+                modifierTaille(index) {
+                   
+                  this.taille = this.taille * 1.1;
+                    
+                }
+            }
+        })
+        app.mount('#app');
+    </script>
+</body>
+
+</html>

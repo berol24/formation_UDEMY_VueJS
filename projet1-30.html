@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet 1-30</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+    <ul id="app">
+       <li v-for="person in persons">
+        {{person.nom}} {{person.prenom}} {{person.age}}
+      </li>
+    </ul>
+    <script>
+        app = Vue.createApp({
+            data() {
+                return {
+                    persons: [
+                    {
+                        nom: "John",
+                        prenom: "Doe",
+                        age: 30
+                    },
+                    {
+                        nom: "Jane",
+                        prenom: "Smith",
+                        age: 25
+                    },
+                    {
+                        nom: "Doe",
+                        prenom: "Jimi",
+                        age: 40
+                    }],
+                }
+            }
+            ,
+            methods: {
+                supprimer(index) {
+                    console.log(index);
+                        this.elements.splice(index,1); //supprimer l'élément à l'index index
+                        
+                }
+            }
+        })
+        app.mount('#app');
+        
+    </script>
+</body>
+
+</html>
