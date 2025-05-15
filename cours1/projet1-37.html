@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet 1-34</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  
+</head>
+
+<body>
+    <div id="app">
+       <p>Quels langages de programmations connaissez vous:</p>
+         <div>
+                <input type="text" v-model="unLang">
+                <input type="button" value="Ajouter" @click="ajouter">
+          </div>
+          <ul >
+           <li v-for="lan in langages"> <input type="checkbox" v-model="lan.etatCase">{{ lan.lang }}  <span v-if="lan.etatCase">est coché</span> <span v-else>est décoché</span></li> <!-- {rouge:lan.etatCase}  si c'est true la classe affiche si c'est false ça part -->
+          </ul>
+         
+    </div>
+    <script>
+        app = Vue.createApp({
+            data() {
+                return {
+                    unLang: "",
+                    langages: []
+                }
+            }
+            ,
+            methods: {
+                ajouter() {
+                        this.langages.push({lang:this.unLang, etatCase:false});
+                        this.unLang = "";
+                }
+            }
+        })
+        app.mount('#app');
+
+    </script>
+</body>
+
+</html>
