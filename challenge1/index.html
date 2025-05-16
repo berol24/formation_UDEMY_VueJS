@@ -13,6 +13,7 @@
         }
 
         .personne {
+            
             clear: left;
             padding: 1rem;
         }
@@ -67,8 +68,10 @@
                 </template>
 
                 {{ p.name.title }} {{ p.name.first }} {{ p.name.last }} <br>
+                <div> {{p.email}}</div>
                 <div v-if="tel">{{p.phone}}</div>
                 <div> {{p.location.country}}</div>
+                  
             </div>
         </div>
 
